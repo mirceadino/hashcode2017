@@ -1,23 +1,39 @@
-#include <bits/stdc++.h>
-#include "domain.h"
+#include "global.h"
 
 using namespace std;
+
+/* ============================= */
+/* ===== GLOBAL VARIABLES ====== */
+/* ============================= */
+
+int a;
+
+
+/* ============================= */
+/* ======== I/O METHODS ======== */
+/* ============================= */
 
 void read() {
 
 }
 
-void solve() {
+extern void solve_mircea();
 
-}
+extern void solve_razvan();
 
 void print() {
-
+    cout << a << endl;
 }
+
+
+/* ============================= */
+/* =========== MAIN ============ */
+/* ============================= */
 
 int main() {
     read();
-    solve();
+    solve_mircea();
+    solve_razvan();
     print();
 
     return 0;
