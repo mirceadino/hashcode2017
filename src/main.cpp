@@ -12,8 +12,9 @@ vector<Video *> videos;
 vector<EndPoint *> endpoints;
 vector<Cache *> caches;
 vector<Request *> requests;
+unordered_map<int, int> aggregate_videos;
 
-const int TESTCASE = 0;
+const int TESTCASE = 2;
 const vector<string> testcases = {
         "kittens", "me_at_the_zoo", "trending_today", "videos_worth_spreading"
 };
@@ -69,6 +70,12 @@ void read() {
     }
 }
 
+void aggregate() {
+    for (auto request:requests) {
+        aggregate_videos[request->video_id] += request->count;
+    }
+}
+
 extern void solve_template();
 
 extern void solve_random();
@@ -95,6 +102,7 @@ void print() {
 
 int main() {
     read();
+    aggregate();
     solve_trending_today();
     print();
 
