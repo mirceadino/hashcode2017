@@ -14,7 +14,7 @@ vector<Cache *> caches;
 vector<Request *> requests;
 unordered_map<int, int> aggregate_videos;
 
-const int TESTCASE = 2;
+const int TESTCASE = 3;
 const vector<string> testcases = {
         "kittens", "me_at_the_zoo", "trending_today", "videos_worth_spreading"
 };
@@ -105,7 +105,7 @@ void print() {
 int main() {
     read();
     aggregate();
-    solve_trending_today();
+    solve_videos_worth_spreading();
     print();
 
     return 0;
