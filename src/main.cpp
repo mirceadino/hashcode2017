@@ -12,7 +12,7 @@ void solve() {
 }
 
 void print() {
-    std::cout<<"Test";
+
 }
 
 int main() {
