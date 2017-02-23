@@ -82,6 +82,8 @@ extern void solve_random();
 
 extern void solve_trending_today();
 
+extern void solve_videos_worth_spreading();
+
 void print() {
     freopen(output_file.c_str(), "w", stdout);
 
