@@ -11,6 +11,7 @@ vector<pair<double, Video *>> sorted_aggregate_videos;
 
 void compute(Cache *cache) {
     unordered_map<int, int> aggregate_videos;
+
     for (EndPoint *ep: cache->endpoints) {
         for (Request *request: ep->requests) {
             aggregate_videos[request->video_id] += request->count;
@@ -19,9 +20,9 @@ void compute(Cache *cache) {
 
     sorted_aggregate_videos.resize(0);
     for (auto x: aggregate_videos) {
-        sorted_aggregate_videos.push_back({x.second * 1.0 / videos[x.first]->size, videos[x.first]});
+        sorted_aggregate_videos.push_back({videos[x.first]->size, videos[x.first]});
     }
-    sort(sorted_aggregate_videos.begin(), sorted_aggregate_videos.end(), greater<pair<double, Video *>>());
+    sort(sorted_aggregate_videos.begin(), sorted_aggregate_videos.end(), less<pair<double, Video *>>());
 
     mlc = 0;
     for (EndPoint *ep: cache->endpoints) {
