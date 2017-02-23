@@ -73,6 +73,8 @@ extern void solve_template();
 
 extern void solve_random();
 
+extern void solve_trending_today();
+
 void print() {
     freopen(output_file.c_str(), "w", stdout);
 
@@ -93,7 +95,7 @@ void print() {
 
 int main() {
     read();
-    solve_random();
+    solve_trending_today();
     print();
 
     return 0;
