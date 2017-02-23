@@ -66,6 +66,8 @@ void read() {
 extern void solve_template();
 
 void print() {
+    freopen("../kittens.out", "w", stdout);
+
     cout << num_caches << endl;
     for (int i = 0; i < num_caches; ++i) {
         cout << i << " ";
