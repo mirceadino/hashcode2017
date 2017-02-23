@@ -9,36 +9,51 @@ using namespace std;
 const int kMaxDim = 50005;
 const int kMaxVideos = 10005;
 const int kInf = (1 << 29) - 1;
-int dp[kMaxDim];
-int father[kMaxDim];
-int last_video[kMaxDim];
-pair<int, int> aggregate_videos_knapsack[kMaxVideos];
+vector<pair<double, int>> aggregate_videos_knapsack;
 
 void solve_trending_today() {
-//    for (auto video:aggregate_videos) {
-//        aggregate_videos_knapsack[video.first] = video.second;
-//    }
+    srand(time(0));
+    for (auto video:aggregate_videos) {
+        int video_id = video.first;
+        int cost = video.second;
+        int weight = videos[video_id]->size;
+        aggregate_videos_knapsack.emplace_back(-1.0 * cost / weight, video_id);
+    }
 
-    for (int i = 0; i < num_caches; i++) {
-        for (int j = 0; j < kMaxDim; j++) {
-            dp[j] = -1;
-        }
-        dp[0] = 0;
+    for (int cache = 0; cache < num_caches; cache++) {
+        cout << cache << '\n';
 
+        sort(aggregate_videos_knapsack.begin(), aggregate_videos_knapsack.end());
+
+        int current_size = cache_size;
+        vector<int> video_indexes;
         for (auto video:aggregate_videos_knapsack) {
-            int video_id = video.first;
+            int video_id = video.second;
             int weight = videos[video_id]->size;
-            int cost = video.second;
-
-            for (int i = kMaxDim - 1; i >= weight; i--) {
-                if (dp[i - weight] != -1) {
-                    dp[i] = max(dp[i], dp[i - weight] + cost);
-                    father[i] = i - weight;
-                    last_video[i] = video_id;
-                }
+            int randum = rand() % 3;
+            if (randum == 0) {
+                continue;
+            }
+            if (weight <= current_size) {
+                current_size -= weight;
+                video_indexes.push_back(video_id);
             }
         }
 
+        unordered_map<int, bool> used;
+        for (auto it:video_indexes) {
+            caches[cache]->add_video(videos[it]);
+            used[it] = 1;
+        }
 
+        vector<pair<double, int>> aux;
+        for (auto it:aggregate_videos_knapsack) {
+            int id = it.second;
+            if (used.count(id)) {
+                continue;
+            }
+            aux.push_back(it);
+        }
+        aggregate_videos_knapsack = aux;
     }
 }

@@ -14,7 +14,7 @@ vector<Cache *> caches;
 vector<Request *> requests;
 unordered_map<int, int> aggregate_videos;
 
-const int TESTCASE = 2;
+const int TESTCASE = 0;
 const vector<string> testcases = {
         "kittens", "me_at_the_zoo", "trending_today", "videos_worth_spreading"
 };
@@ -81,6 +81,8 @@ extern void solve_template();
 extern void solve_random();
 
 extern void solve_trending_today();
+
+extern void solve_alex();
 
 void print() {
     freopen(output_file.c_str(), "w", stdout);
