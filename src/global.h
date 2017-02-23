@@ -4,6 +4,11 @@
 #include "domain.h"
 #include <bits/stdc++.h>
 
-extern int a;
+extern int V, E, R, C, X;
+extern int num_videos, num_endpoints, num_caches, num_requests, cache_size;
+extern vector<Video *> videos;
+extern vector<EndPoint *> endpoints;
+extern vector<Cache *> caches;
+extern vector<Request *> requests;
 
 #endif //HASHCODE2017_GLOBAL_H
