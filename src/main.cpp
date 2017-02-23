@@ -13,10 +13,12 @@ vector<EndPoint *> endpoints;
 vector<Cache *> caches;
 vector<Request *> requests;
 
-
-const string testcase = "videos_worth_spreading";
-const string input_file = "../" + testcase + ".in";
-const string output_file = "../" + testcase + ".out";
+const int TESTCASE = 0;
+const vector<string> testcases = {
+        "kittens", "me_at_the_zoo", "trending_today", "videos_worth_spreading"
+};
+const string input_file = "../" + testcases[TESTCASE] + ".in";
+const string output_file = "../" + testcases[TESTCASE] + ".out";
 
 /* ============================= */
 /* ======== I/O METHODS ======== */
