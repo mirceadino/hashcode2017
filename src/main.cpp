@@ -14,12 +14,16 @@ vector<Cache *> caches;
 vector<Request *> requests;
 
 
+const string testcase = "videos_worth_spreading";
+const string input_file = "../" + testcase + ".in";
+const string output_file = "../" + testcase + ".out";
+
 /* ============================= */
 /* ======== I/O METHODS ======== */
 /* ============================= */
 
 void read() {
-    freopen("../kittens.in", "r", stdin);
+    freopen(input_file.c_str(), "r", stdin);
 
     cin >> V >> E >> R >> C >> X;
     num_videos = V;
@@ -68,7 +72,7 @@ extern void solve_template();
 extern void solve_random();
 
 void print() {
-    freopen("../kittens.out", "w", stdout);
+    freopen(output_file.c_str(), "w", stdout);
 
     cout << num_caches << endl;
     for (int i = 0; i < num_caches; ++i) {
