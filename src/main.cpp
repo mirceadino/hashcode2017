@@ -17,9 +17,7 @@ void read() {
 
 }
 
-extern void solve_mircea();
-
-extern void solve_razvan();
+extern void solve_template();
 
 void print() {
     cout << a << endl;
@@ -32,8 +30,7 @@ void print() {
 
 int main() {
     read();
-    solve_mircea();
-    solve_razvan();
+    solve_template();
     print();
 
     return 0;
