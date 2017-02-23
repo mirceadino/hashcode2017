@@ -65,6 +65,8 @@ void read() {
 
 extern void solve_template();
 
+extern void solve_random();
+
 void print() {
     freopen("../kittens.out", "w", stdout);
 
@@ -85,7 +87,7 @@ void print() {
 
 int main() {
     read();
-    solve_template();
+    solve_random();
     print();
 
     return 0;

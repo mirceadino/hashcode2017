@@ -28,7 +28,7 @@ class Cache {
 public:
     Cache(int _id) : id(_id), size(0) {}
 
-    Cache(int _id, int _size) : id(_id), size(_size) {}
+    Cache(int _id, int _size) : id(_id), size(_size), remaining(_size) {}
 
     void add_endpoint(EndPoint *endpoint, int _latency);
 
@@ -40,6 +40,8 @@ public:
     vector<int> endpoints_id;
     unordered_map<EndPoint *, int> latency_to;
     unordered_map<int, int> latency_to_id;
+
+    int remaining;
 
     vector<Video *> videos;
     vector<int> videos_id;

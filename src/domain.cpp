@@ -10,6 +10,7 @@ void Cache::add_endpoint(EndPoint *endpoint, int _latency) {
 void Cache::add_video(Video *video) {
     videos.push_back(video);
     videos_id.push_back(video->id);
+    remaining -= video->size;
 }
 
 void EndPoint::add_cache(Cache *cache, int _latency) {
