@@ -6,7 +6,7 @@ using namespace std;
 /* =========== SOLVE =========== */
 /* ============================= */
 
-void solve_random() {
+void solve_trending_today() {
     srand(clock());
 
     for (int cache_id; cache_id < num_caches; ++cache_id) {
