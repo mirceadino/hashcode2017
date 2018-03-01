@@ -9,3 +9,5 @@ Me at the zoo - 419550 <br/>
 Trending today - 499966 <br/>
 Videos worth spreading - 497783 <br/>
 **Total score - 2120301**
+
+We were placed on the 291st world wide and on 15th on Romania's standings.
